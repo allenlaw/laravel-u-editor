@@ -55,7 +55,7 @@ class Lists
      */
     protected function  getfiles($path, $allowFiles, &$files = array())
     {
-
+        $public_path=public_path();
         if (!is_dir($path)) return null;
         if(substr($path, strlen($path) - 1) != '/') $path .= '/';
         $handle = opendir($path);
@@ -67,7 +67,7 @@ class Lists
                 } else {
                     if (preg_match("/\.(".$allowFiles.")$/i", $file)) {
                         $files[] = array(
-                            'url'=> substr($path2, strlen($_SERVER['DOCUMENT_ROOT'])),
+                            'url'=> substr($path2, strlen($public_path)),
                             'mtime'=> filemtime($path2)
                         );
                     }
