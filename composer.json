@@ -25,7 +25,7 @@
   },
   "autoload": {
     "psr-4": {
-      "Stevenyangecho\\UEditor\\": "src/"
+      "Allenlaw\\UEditor\\": "src/"
     }
   },
   "minimum-stability": "dev",
